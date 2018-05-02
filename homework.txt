@@ -1,0 +1,21 @@
+########## HOMEWORK 1 ############
+
+Rental Modules Homework !
+  1. Go to rental-list.component.html, you can see we are hardcoding 4 rental items.
+  2. In rental-list.component.ts create rentals array of 4 items, they can be just some strings
+     important thing is that we can iterate through them
+  3. in rental-list.component.html iterate through this array(find out how you can create for loop in angular) and inside of this loop render <bwm-rental-list-item></bwm-rental-list-item>
+  4. Good Luck! We will start with this next section and will add real data.
+
+
+########## HOMEWORK 2 ############
+
+Try to get :rentalId Parameter display on rental details page.
+1. Go to rental-detail.component.ts and try to get :rentalId parameter from url (you need to use ActivatedRoute)
+	and assign it to some variable , e.g "rentalId". Best place to get this parameter is in ngOnInit method.
+2. Display this parameter in rental-detail.component.html
+3. For additional info check routing on angular page.
+4. good luck
+
+
+
