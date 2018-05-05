@@ -23,6 +23,8 @@
     "@angular/router": "^5.2.0",
     "bootstrap": "^4.1.0",
     "core-js": "^2.4.1",
+    "express": "^4.16.3",
+    "mongoose": "^5.0.17",
     "rxjs": "^5.5.6",
     "zone.js": "^0.8.19"
   },
