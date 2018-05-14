@@ -19,3 +19,16 @@ Try to get :rentalId Parameter display on rental details page.
 
 
 
+########## ASSIGNMENT, little warm up ############
+
+1.Create user model contains:
+	'username', of type String, min 4, max 32
+	'email', of type, String, min 4, max 32, should be required, lowercase, unique and should match this regex:
+		/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/
+
+	'password', of type String, and is required, min 4, max 32
+	'rentals', user can have multiple rentals (array of rental IDs) - you need probably check mongoose Documentation for it , !!!Feel free to skip this last one and follow me.
+
+
+
+
