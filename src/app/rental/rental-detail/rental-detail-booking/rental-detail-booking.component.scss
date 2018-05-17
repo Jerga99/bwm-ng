@@ -1,0 +1,39 @@
+@import 'variables';
+
+.booking {
+  padding: 20px;
+  border: 1px solid $light-gray-color;
+
+  .btn-confirm {
+    background-color: #FF5A5F;
+    font-size: 17px;
+    font-weight: 700;
+    padding: 13px;
+  }
+
+  label {
+    font-size:12px;
+    font-weight: 300;
+    margin-bottom: 0;
+  }
+
+  &-price {
+    font-size: 22px;
+    font-weight: 700;
+  }
+
+  &-per-night {
+    font-size: 13px;
+    font-weight: 300;
+  }
+
+  &-note-title {
+    font-size: 14px;
+    margin-bottom: 10px;
+  }
+
+  &-note-text {
+    font-size: 13px;
+    font-weight: 300;
+  }
+}

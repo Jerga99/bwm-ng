@@ -1,0 +1,17 @@
+<div class="booking">
+  <h3 class="booking-price">${{price}} <span class="booking-per-night">per night</span></h3>
+  <hr>
+  <label>Dates</label>
+    <input type="text" class="form-control daterangepicker-input" name="daterangeInput" daterangepicker [options]="options" (selected)="selectedDate($event, daterange)"
+     />
+  <div class="form-group">
+    <label for="guests">Guests</label>
+    <input type="number" class="form-control" id="guests" aria-describedby="emailHelp" placeholder="">
+  </div>
+  <button class="btn btn-danger btn-confirm btn-block">Reserve place now</button>
+  <hr>
+  <p class="booking-note-title">People are interested into this house</p>
+  <p class="booking-note-text">
+    More than 500 people checked this rental in last month.
+  </p>
+</div>
