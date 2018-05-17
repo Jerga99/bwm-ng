@@ -19,7 +19,9 @@ Try to get :rentalId Parameter display on rental details page.
 
 
 
-########## ASSIGNMENT, little warm up ############
+########## ASSIGNMENT, User Model ############
+
+
 
 1.Create user model contains:
 	'username', of type String, min 4, max 32
@@ -28,6 +30,59 @@ Try to get :rentalId Parameter display on rental details page.
 
 	'password', of type String, and is required, min 4, max 32
 	'rentals', user can have multiple rentals (array of rental IDs) - you need probably check mongoose Documentation for it , !!!Feel free to skip this last one and follow me.
+
+
+
+  ########## ASSIGNMENT 2, Register and Login components ############
+
+1. Create auth component "/src/app/auth" as container component for Login and Register
+2. Create Register component inside auth component "/src/app/auth/register"
+3. Create Login component inside auth component "/src/app/auth/login"
+4. Create separate auth module with routing to login and register page
+5. Good luck ! (:
+
+
+
+########## ASSIGNMENT 3, Auth Service ############
+
+1. Create auth service in  "/src/app/auth/shared"
+2. Register service in auth module
+3. Create function "register" that sent POST request to our "/api/v1/users/register" with data from Form
+4. Good luck and have fun (:
+
+
+
+########## ASSIGNMENT 4, Reactive form validation ############
+1. add required validator to our login form to "email" and "password' in login.component.ts
+2. add [disabled] attribute to button in login form and disable it when form is NOT valid.
+3. Good luck guys!
+
+
+########## ASSIGNMENT 5, Login User ############
+
+1. Create function "login" that sent POST request to our "/api/v1/users/auth" with data from Form
+2. On form submit call this function inside of our login.component.ts
+3. Redirect user to "/rentals" on succesful login
+4. !!!!BONUS!!!! Save a token to local storage under a key "bwm_auth". Save a token in auth service
+5. Good luck and have fun (:
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

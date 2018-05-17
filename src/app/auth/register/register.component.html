@@ -1,0 +1,70 @@
+<section id="register">
+  <div class="bwm-form">
+    <div class="row">
+      <div class="col-md-5">
+        <h1 class="page-title">Register</h1>
+        <form #registerForm="ngForm">
+          <div class="form-group">
+            <label for="username">Username</label>
+            <input [(ngModel)]="formData.username"
+                  #username="ngModel"
+                   name="username"
+                   type="text"
+                   class="form-control"
+                   id="username"
+                   required>
+             <div *ngIf="username.invalid && (username.dirty || username.touched)"
+                 class="alert alert-danger">
+
+              <div *ngIf="username.errors.required">
+                Username is required.
+              </div>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label for="email">Email</label>
+            <input [(ngModel)]="formData.email"
+                   name="email"
+                   type="email"
+                   class="form-control"
+                   id="email"
+                   required>
+          </div>
+
+          <div class="form-group">
+            <label for="password">Password</label>
+            <input [(ngModel)]="formData.password"
+                   name="password"
+                   type="password"
+                   class="form-control"
+                   id="password"
+                   required>
+          </div>
+
+          <div class="form-group">
+            <label for="passwordConfirmation">Confirm Password</label>
+            <input [(ngModel)]="formData.passwordConfirmation"
+                   name="passwordConfirmation"
+                   type="password"
+                   class="form-control"
+                   id="passwordConfirmation"
+                   required>
+          </div>
+          <button [disabled]="!registerForm.form.valid" (click)="register()" type="submit" class="btn btn-bwm">Submit</button>
+        </form>
+        <div *ngIf="errors.length > 0" class="alert alert-danger">
+          <p *ngFor="let error of errors">
+            {{error.detail}}
+          </p>
+        </div>
+      </div>
+      <div class="col-md-6 ml-auto">
+        <div class="image-container">
+          <h2 class="catchphrase">As our member you have access to most awesome places in the world.</h2>
+          <img src="assets/images/register-image.jpg" alt="">
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
