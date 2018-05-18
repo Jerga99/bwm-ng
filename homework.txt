@@ -66,6 +66,33 @@ Try to get :rentalId Parameter display on rental details page.
 4. !!!!BONUS!!!! Save a token to local storage under a key "bwm_auth". Save a token in auth service
 5. Good luck and have fun (:
 
+########## ASSIGNMENT 6, Booking Model ############
+
+1. Create model called "Booking" with these properties:
+  - endAt: type Date, required: "Ending Date is Required"
+  - startAt: type Date, required: "Starting Date is Required"
+  - totalPrice: type Number
+  - days: type Number
+  - guests: type Number
+  - createdAt: type Date, default: Date Now
+  - user: type ObjectId
+  - rental: type ObjectId
+
+2. Update User Model
+  - bookings: type ObjectId and it is Array
+
+3. Update Rental Model
+  - bookings: type ObjectId and it is Array
+
+
+  ########## ASSIGNMENT 7, Booking Controller ############
+
+1. Controller function: "createBooking" with just some JSON response.
+2. Create POST route to "api/v1/bookings", apply Auth Middleware and createBooking controller
+3. Good Luck (:
+
+
+
 
 
 
