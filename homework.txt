@@ -92,6 +92,27 @@ Try to get :rentalId Parameter display on rental details page.
 3. Good Luck (:
 
 
+  ########## ASSIGNMENT 8, Booking Service ############
+
+1. Create Booking service in booking/shared folder
+2. Create function to send post request to endpoint api/v1/bookings with bookings data
+3. Create function in booking component that call our service function to create booking
+   after user click "confirm" button in modal.
+    !!!do not forget to assign to booking.rental = rental before sending requests!!!
+4. Check network tab if your request was succesful, if you are getting errors in response
+try to resolve them or continue video and follow me.
+    !!!do not forget to register service in providers of rental module!!!
+5. Good luck and have fun
+
+
+########## ASSIGNMENT 9, Add booked out dates to calendar after booking was created ############
+
+1. After success booking creation add new bookedout dates to bookedOutdates array
+   !!!Do not forget to get range of dates since you are getting startAt and endAt of booking !!!
+2. Push this new date range to booked out dates array
+3. Check calendar if change are applied
+4. Have fun, if you are stuck continue video and follow me.
+
 
 
 
