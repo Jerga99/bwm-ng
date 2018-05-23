@@ -113,6 +113,15 @@ try to resolve them or continue video and follow me.
 3. Check calendar if change are applied
 4. Have fun, if you are stuck continue video and follow me.
 
+########## ASSIGNMENT 10, Create Endpoint to Create Rental ############
+
+1. Create POST route "api/v1/rentals" and apply auth middleware to it
+2. Get All values from request like "title, street, category, image...."
+3. !!!Do not forget to add user on rental since we are getting user from "res.locals.user" before you create Rental
+4. On succesful rental creation also update user -> push this new rental we just created to rentals of user
+   !!! If you dont remember check bookings controller where we pushing bookings to user!!!
+5. Have fun, if you are stuck continue video and follow me.
+
 
 
 
