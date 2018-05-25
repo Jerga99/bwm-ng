@@ -1,25 +1,30 @@
 <div class="booking">
   <h3 class="booking-price">${{rental.dailyRate}} <span class="booking-per-night">per night</span></h3>
   <hr>
-  <form #bookingForm="ngForm">
-    <label>Dates</label>
-      <input type="text" class="form-control daterangepicker-input" name="daterangeInput" daterangepicker [options]="options" (selected)="selectedDate($event, daterange)"
-       />
-    <div class="form-group">
-      <label for="guests">Guests</label>
-      <input [(ngModel)]="newBooking.guests"
-             name="guests"
-             type="number"
-             class="form-control"
-             id="guests"
-             aria-describedby="emailHelp"
-             required>
-    </div>
-  </form>
-  <button (click)="openConfirmModal(content)"
-          [disabled]="!bookingForm.form.valid || !newBooking.startAt || !newBooking.startAt"
-          class="btn btn-danger btn-confirm btn-block">Reserve place now</button>
-  <hr>
+  <ng-container *ngIf="auth.isAuthenticated()">
+    <form #bookingForm="ngForm">
+      <label>Dates</label>
+        <input type="text" class="form-control daterangepicker-input" name="daterangeInput" daterangepicker [options]="options" (selected)="selectedDate($event, daterange)"
+         />
+      <div class="form-group">
+        <label for="guests">Guests</label>
+        <input [(ngModel)]="newBooking.guests"
+               name="guests"
+               type="number"
+               class="form-control"
+               id="guests"
+               aria-describedby="emailHelp"
+               required>
+      </div>
+    </form>
+    <button (click)="openConfirmModal(content)"
+            [disabled]="!bookingForm.form.valid || !newBooking.startAt || !newBooking.startAt"
+            class="btn btn-danger btn-confirm btn-block">Reserve place now</button>
+    <hr>
+  </ng-container>
+  <div *ngIf="!auth.isAuthenticated()" class="should-login">
+    <a class="btn btn-bwm" routerLink="/login">Login and book this place today</a>
+  </div>
   <p class="booking-note-title">People are interested into this house</p>
   <p class="booking-note-text">
     More than 500 people checked this rental in last month.
