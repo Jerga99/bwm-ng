@@ -1,0 +1,13 @@
+<section id="rentalListing">
+  <h1 *ngIf="rentals.length > 0" class="page-title">Your Home in {{city | lowercase | ucwords}}</h1>
+  <h1 *ngIf="errors.length > 0" class="page-title">
+    <p *ngFor="let error of errors">
+      {{error.detail}}
+    </p>
+  </h1>
+  <div class="row">
+    <div class='col-md-3 col-xs-6' *ngFor="let rental of rentals">
+      <bwm-rental-list-item [rental]="rental"> </bwm-rental-list-item>
+    </div>
+  </div>
+</section>

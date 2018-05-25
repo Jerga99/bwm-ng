@@ -1,9 +1,18 @@
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
   <a class="navbar-brand" routerLink="/rentals">BookWithMe</a>
-  <form class="form-inline">
-    <input class="form-control mr-sm-2 bwm-search" type="search" placeholder="Search" aria-label="Search">
-    <button class="btn btn-outline-success my-2 my-sm-0 btn-bwm-search" type="submit">Search</button>
-  </form>
+
+  <div class="form-inline">
+    <input #citySearch
+           (keyup.enter)="search(citySearch.value)"
+           class="form-control mr-sm-2 bwm-search"
+           type="search"
+           placeholder="Search"
+           aria-label="Search">
+    <button (click)="search(citySearch.value)"
+            class="btn btn-outline-success my-2 my-sm-0 btn-bwm-search"
+            type="button">Search</button>
+  </div>
+
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
@@ -18,13 +27,21 @@
         </li>
       </ng-container>
       <ng-container *ngIf="auth.isAuthenticated()">
-      <li  class="nav-item">
-        <a class="nav-link"> {{auth.getUsername()}}</a>
-      </li>
-      <li class="nav-item clickable">
-        <a class="nav-link" (click)="logout()">Logout</a>
-      </li>
-    </ng-container>
+        <li class="nav-item">
+          <a class="nav-link"> {{auth.getUsername()}}</a>
+        </li>
+        <div class="nav-item dropdown clickable">
+          <a class="nav-link dropdown-toggle" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            Owner Section
+          </a>
+          <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+            <a class="dropdown-item" routerLink="/rentals/new">Create Rental</a>
+          </div>
+        </div>
+        <li class="nav-item clickable">
+          <a class="nav-link" (click)="logout()">Logout</a>
+        </li>
+      </ng-container>
     </ul>
   </div>
 </nav>

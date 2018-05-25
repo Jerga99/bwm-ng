@@ -1,0 +1,128 @@
+<section id="newRental">
+  <div class="bwm-form">
+    <div class="row">
+      <div class="col-md-5">
+        <h1 class="page-title">Create Rental</h1>
+        <form #rentalForm="ngForm">
+          <div class="form-group">
+            <label for="title">Title</label>
+            <input type="text"
+                   class="form-control"
+                   id="title"
+                   name="title"
+                   [(ngModel)]="newRental.title"
+                   required>
+          </div>
+
+          <div class="form-group">
+            <label for="city">City</label>
+            <input type="text"
+                   class="form-control"
+                   id="city"
+                   name="city"
+                   [(ngModel)]="newRental.city"
+                   required>
+          </div>
+
+          <div class="form-group">
+            <label for="street">Street</label>
+            <input type="text"
+                   class="form-control"
+                   id="street"
+                   name="street"
+                   [(ngModel)]="newRental.street"
+                   required>
+          </div>
+
+          <div class="form-group">
+            <label for="category">Category</label>
+
+            <select class="form-control"
+                    id="category"
+                    name="category"
+                    [(ngModel)]="newRental.category"
+                    required>
+              <option *ngFor="let category of rentalCategories"> {{category}} </option>
+
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label for="image">Image</label>
+            <input type="file"
+                   name="image"
+                   class="form-control"
+                   id="image"
+                   placeholder="Upload file..."
+                   (change)="handleImageChange()"
+                   required>
+          </div>
+
+          <div class="form-group">
+            <label for="bedrooms">Bedrooms</label>
+            <input type="number"
+                   class="form-control"
+                   id="bedrooms"
+                   name="bedrooms"
+                   [(ngModel)]="newRental.bedrooms"
+                   required>
+          </div>
+
+          <div class="form-group">
+            <label for="description">Description</label>
+            <textarea rows="5"
+                      type="text"
+                      class="form-control"
+                      id="description"
+                      name="description"
+                      [(ngModel)]="newRental.description"
+                      required>
+            </textarea>
+          </div>
+
+          <div class="form-group">
+            <label for="dailyRate">Daily Rate</label>
+            <div class="input-group">
+              <div class="input-group-prepend">
+                <div class="input-group-text">$</div>
+              </div>
+              <input type="number"
+                     name="dailyRate"
+                     class="form-control"
+                     id="dailyRate"
+                     name="dailyRate"
+                     [(ngModel)]="newRental.dailyRate"
+                     required>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label for="shared">Shared</label>
+            <input type="checkbox"
+                   class="form-control"
+                   id="shared"
+                   name="shared"
+                   [(ngModel)]="newRental.shared"
+                   required>
+          </div>
+          <button (click)="createRental()"
+                  [disabled]="!rentalForm.form.valid"
+                  type="button"
+                  class="btn btn-bwm">Submit
+          </button>
+        </form>
+        <div *ngIf="errors.length > 0" class="alert alert-danger">
+          <p *ngFor="let error of errors">
+            {{error.detail}}
+          </p>
+        </div>
+      </div>
+      <div class="col-md-6 ml-auto">
+        <div class="image-container">
+          <h2 class="catchphrase">Hundreds of awesome places in reach of few clicks.</h2>
+          <img src="assets/images/create-rental.jpg" alt="">
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

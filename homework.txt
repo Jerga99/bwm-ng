@@ -123,6 +123,31 @@ try to resolve them or continue video and follow me.
 5. Have fun, if you are stuck continue video and follow me.
 
 
+########## ASSIGNMENT 11, Create rental-search ############
+
+1. Create "rental-search.component" inside of rental folder
+2. Inside of html template copy same code we have in "rental-list.component.html" file
+3. Create route ":city/homes" to component in "rental.module.ts" file
+4. Test to navigate to this route
+5. Have fun, if you are stuck continue video and follow me.
+
+########## ASSIGNMENT 12, Get rentals from server ############
+1. Create new function in rental service to get rentals with city query
+2. In rental-search component get city params from url.
+3. Call function from service and get rentals by city
+  - It is very similiar as rental-list component
+4. Have fun, if you are stuck continue video and follow me.
+
+
+########## ASSIGNMENT 13, Get data from form ############
+1. Provide [(ngModel)] to every input except image as we did in Register Form - dont forget "name" attribute.
+2. We can provide "required" attribute to inputs later since we want first test form.
+3. Get a reference to form with "ngForm"
+4. On button create click event and call function "createRental"
+5. console.log "newRental" in "createRental" function
+6. Have fun, if you are stuck continue video and follow me.
+
+
 
 
 
