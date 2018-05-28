@@ -24,9 +24,21 @@ html, body, p {
   margin-bottom: 20px;
 }
 
-
 .clickable {
   cursor: pointer;
+}
+
+.btn-ghost {
+  background-color: transparent;
+  color: $main-color;
+  border: 1px solid $main-color !important;
+  font-size: 12px !important;
+
+  &:hover, &:focus {
+    background-color: transparent !important;
+    color: $main-color !important;
+    border: 1px solid $main-color !important;
+  }
 }
 
 .btn-bwm {
@@ -34,7 +46,7 @@ html, body, p {
   border-color: $main-color;
   color: white;
   padding: 15px 30px;
-  font-size: 20px !important;
+  font-size: 20px;
 
   &:hover, &:focus, &:active {
     border-color: $main-color !important;
