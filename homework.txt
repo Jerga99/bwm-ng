@@ -148,6 +148,42 @@ try to resolve them or continue video and follow me.
 6. Have fun, if you are stuck continue video and follow me.
 
 
+########## ASSIGNMENT 14, Create manage section ############
+1. Create "manage" component in app folder with <router-outlet>
+2. Create "manage-rental" and "manage-booking" component in "manage" folder
+3. Create "manage" module with routing to "/manage/rentals" for ManageRentalComponent and "/manage/bookings" for ManageBookingComponent
+4. Remove unnecesary components that has been generated in app module
+5. Add links to header to these new components, just after create rental
+6. Do not forget register manage module to app module
+7. Have fun, if you are stuck continue video and follow me.
+
+
+
+########## ASSIGNMENT 15, Get user rentals and bookings from server ############
+1. Add function to rental service to get user rentals. GET Request to '/api/v1/rentals/manage'
+2. Add function to booking service to get user bookings. GET Request to '/api/v1/bookings/manage'
+3. Call these functions in "manage-booking" and "manage-rental" component in ngOnInit function
+4. Test if you are getting data, check network tab
+
+######## BONUS #########
+5. Iterate bookings and rentals in html templates and display some data.
+6. Have fun, if you are stuck continue video and follow me.
+
+
+
+
+########## ASSIGNMENT 16, Delete Rental Function ############
+1. Add function to rental service to delete rental by id, Send DELETE request to "/api/v1/rentals/rentalId"
+HINT: this.http.delete for delete request
+2. Create function in manage-rental-booking component and call rental service delete function inside when
+user click "Yes" button
+*BONUS*
+3. On success callback function remove rental from rentals array, remember we know index of rental we are removing and we are keeping this index in "rentalDeleteIndex"
+HINT: use "splice" function on array and do not forget set rentalDeleteIndex to undefined on success
+4. Have fun, if you are stuck continue video and follow me.
+
+
+
 
 
 

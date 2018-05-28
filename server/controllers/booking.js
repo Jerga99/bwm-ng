@@ -50,7 +50,7 @@ exports.getUserBookings = function(req, res) {
 
   Booking
     .where({user})
-    .populate('rentals')
+    .populate('rental')
     .exec(function(err, foundBookings) {
 
     if (err) {
