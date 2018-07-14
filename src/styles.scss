@@ -1,5 +1,6 @@
 /* You can add global styles to this file, and also import other style files */
 @import 'variables';
+@import 'rental-detail';
 
 html, body, p {
   color: $main-text-color;
@@ -99,3 +100,18 @@ html, body, p {
     letter-spacing: 1px;
   }
 }
+
+.inline {
+  display: inline-block;
+}
+
+.editable-component {
+  .btn {
+    &.btn-editable {
+      margin-left: 5px;
+      color: white;
+      font-size: 12px;
+    }
+  }
+}
+
