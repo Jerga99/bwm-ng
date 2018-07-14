@@ -183,6 +183,10 @@ HINT: use "splice" function on array and do not forget set rentalDeleteIndex to 
 4. Have fun, if you are stuck continue video and follow me.
 
 
+########## ASSIGNMENT 17, Patch Rental Function ############
+1. Add function to rental service to PATCH rental by id, Send PATCH request to "/api/v1/rentals/rentalId"
+HINT: this.http.patch for patch request
+2. Do not forget to provide updated data we are emiting from editable component
 
 
 

@@ -1,0 +1,32 @@
+<div [ngStyle]="style" class="editable-component">
+
+  <input *ngIf="isActiveInput"
+    class="{{className}}"
+    type="type"
+    (keydown.escape)="cancelUpdate()"
+    (keyup.enter)="updateEntity()"
+    [(ngModel)]="entity[entityField]"
+    [value]="entity[entityField]">
+
+  <span *ngIf="!isActiveInput" class="{{className}} inline"> {{transformView(entity[entityField])}} </span>
+
+  <div class="inline">
+    <button *ngIf="!isActiveInput"
+      class="btn btn-sm btn-warning btn-editable"
+      (click)="isActiveInput = true">
+      Edit
+    </button>
+
+    <button *ngIf="isActiveInput"
+      class="btn btn-sm btn-success btn-editable"
+      (click)="updateEntity()">
+      Save
+    </button>
+
+    <button *ngIf="isActiveInput"
+      class="btn btn-sm btn-danger btn-editable"
+      (click)="cancelUpdate()">
+      Cancel
+    </button>
+  </div>
+</div>

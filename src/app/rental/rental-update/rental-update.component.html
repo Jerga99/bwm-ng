@@ -1,0 +1,114 @@
+<section id="rentalDetails" *ngIf="rental">
+  <div class="upper-section">
+    <div class="row">
+      <div class="col-md-6">
+        <img src="{{rental.image}}" alt="">
+      </div>
+      <div class="col-md-6">
+        <bwm-map
+          [locationSubject]="locationSubject"
+          [location]="rental.city + ', ' + rental.street"> </bwm-map>
+      </div>
+    </div>
+  </div>
+
+  <div class="details-section">
+    <div class="row">
+      <div class="col-md-8">
+        <div class="rental">
+          <h2 class="rental-type {{rental.category}}">
+            Shared
+            <bwm-editable-select
+            [(entity)]="rental"
+            [field]="'shared'"
+            [options]="[true, false]"
+            [style]="{'display': 'inline-block'}"
+            [className]="'rental-shared'"
+            (entityUpdated)="updateRental(rental._id, $event)">
+          </bwm-editable-select>
+
+           <bwm-editable-select
+            [(entity)]="rental"
+            [field]="'category'"
+            [options]="rentalCategories"
+            [className]="'rental-category'"
+            (entityUpdated)="updateRental(rental._id, $event)">
+          </bwm-editable-select>
+         </h2>
+          <div class="rental-owner">
+            <img src="https://api.adorable.io/avatars/285/abott@adorable.png" alt="">
+            <span>{{rental.user.username}}</span>
+          </div>
+
+          <bwm-editable-input
+            [(entity)]="rental"
+            [field]="'title'"
+            [className]="'rental-title'"
+            (entityUpdated)="updateRental(rental._id, $event)">
+          </bwm-editable-input>
+
+          <bwm-editable-input
+            [(entity)]="rental"
+            [field]="'city'"
+            [transformView]="transformLocation"
+            [className]="'rental-city'"
+            (entityUpdated)="updateRental(rental._id, $event)">
+          </bwm-editable-input>
+
+          <bwm-editable-input
+            [(entity)]="rental"
+            [field]="'street'"
+            [transformView]="transformLocation"
+            [className]="'rental-street'"
+            (entityUpdated)="updateRental(rental._id, $event)">
+          </bwm-editable-input>
+
+          <div class="rental-room-info">
+            <span><i class="fa fa-building"></i>
+              <bwm-editable-input
+                [(entity)]="rental"
+                [field]="'bedrooms'"
+                [type]="'number'"
+                [style]="{'display': 'inline-block'}"
+                [className]="'rental-bedrooms'"
+                (entityUpdated)="updateRental(rental._id, $event)">
+              </bwm-editable-input> bedrooms
+            </span>
+            <span><i class="fa fa-user"></i>  {{countBedroomAssets(4)}} guests</span>
+            <span><i class="fa fa-bed"></i> {{countBedroomAssets(2)}} beds</span>
+          </div>
+          <bwm-editable-textarea
+            [(entity)]="rental"
+            [field]="'description'"
+            [className]="'rental-description'"
+            [rows]="'6'"
+            [cols]="'50'"
+            (entityUpdated)="updateRental(rental._id, $event)">
+          </bwm-editable-textarea>
+
+          <hr>
+          <div class="rental-assets">
+            <h3 class="title">Assets</h3>
+            <div class="row">
+              <div class="col-md-6">
+                <span><i class="fa fa-asterisk"></i> Cooling</span>
+                <span><i class="fa fa-thermometer"></i> Heating</span>
+                <span><i class="fa fa-location-arrow"></i> Iron</span>
+              </div>
+              <div class="col-md-6">
+                <span><i class="fa fa-desktop"></i> Working area</span>
+                <span><i class="fa fa-cube"></i> Washing machine</span>
+                <span><i class="fa fa-cube"></i> Dishwasher</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <bwm-rental-detail-booking
+          [rental]="rental">
+        </bwm-rental-detail-booking>
+      </div>
+    </div>
+  </div>
+</section>
