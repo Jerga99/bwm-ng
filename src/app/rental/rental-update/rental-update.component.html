@@ -2,7 +2,11 @@
   <div class="upper-section">
     <div class="row">
       <div class="col-md-6">
-        <img src="{{rental.image}}" alt="">
+        <bwm-editable-image
+          [(entity)]="rental"
+          [field]="'image'"
+          (entityUpdated)="updateRental(rental._id, $event)">
+        </bwm-editable-image>
       </div>
       <div class="col-md-6">
         <bwm-map

@@ -190,6 +190,15 @@ HINT: this.http.patch for patch request
 
 
 
+########## ASSIGNMENT 18, Create Image Upload Component ############
+1. Generate new component  "image-upload" in common/components
+2. Create Empty ImageUploadService in common/components/image-upload
+3. Create Image Upload Module in common/components/image-upload and exports image-upload component from it
+   NOTE: Dont forget also to import CommonModule and provide ImageUploadService
+4. Import this module in rental module
+5. Display image upload component in rental create form instead of image input we are displaying curently
+
+
 
 
 
