@@ -28,6 +28,14 @@ export class RentalCreateComponent implements OnInit {
     this.newRental.shared = false;
   }
 
+  handleImageUpload(imageUrl: string) {
+    this.newRental.image = imageUrl;
+  }
+
+  handleImageError() {
+    this.newRental.image = '';
+  }
+
   createRental() {
     this.rentalService.createRental(this.newRental).subscribe(
       (rental: Rental) => {
