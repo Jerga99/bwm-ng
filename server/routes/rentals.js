@@ -54,7 +54,7 @@ router.get('/:id', function(req, res) {
         .populate('bookings', 'startAt endAt -_id')
         .exec(function(err, foundRental) {
 
-    if (err) {
+    if (err || !foundRental) {
       return res.status(422).send({errors: [{title: 'Rental Error!', detail: 'Could not find Rental!'}]});
     }
 
