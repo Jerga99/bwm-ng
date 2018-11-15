@@ -27,4 +27,43 @@
       <a class="btn btn-bwm" routerLink="#">Available Rentals</a>
     </div>
   </div>
+
+
+  <h1 class="page-title">My Pending Bookings</h1>
+  <div class="row">
+    <ng-container *ngIf="payments && payments.length > 0">
+      <div *ngFor="let payment of payments" class="col-md-4">
+        <div class="card text-center">
+          <div class="card-header">
+            Booking made by {{payment.fromUser.username}}
+          </div>
+          <div class="card-block">
+            <ng-container *ngIf="payment.booking.rental">
+              <h4 class="card-title">{{payment.booking.rental.title}} - {{payment.booking.rental.city | ucwords}} </h4>
+              <p class="card-text booking-desc"> {{payment.booking.rental.description}}</p>
+            </ng-container>
+            <p class="card-text booking-days"> {{payment.booking.startAt | formatDate}} - {{payment.booking.endAt | formatDate}} | {{payment.booking.days}} days</p>
+            <p class="card-text"><span>Revenue: </span> <span class="booking-price-value">{{payment.amount / 100}} $</span></p>
+
+            <p class="card-text"><span>Status: </span> <span class="booking-price-value">{{payment.status}}</span></p>
+
+
+            <a *ngIf="payment.booking.rental" class="btn btn-bwm" routerLink="/rentals/{{payment.booking.rental._id}}">Go to Rental</a>
+          </div>
+          <div class="card-footer text-muted">
+            Created {{payment.booking.createdAt | formatDate}}
+
+            <div *ngIf="payment.status === 'pending'">
+              <button class='btn btn-success' (click)="acceptPayment(payment)">Confirm</button>
+              <button class='btn btn-danger' (click)="declinePayment(payment)">Decline</button>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </ng-container>
+    <div *ngIf="payments && payments.length === 0" class="alert alert-warning">
+      You have no pending bookings curently!
+    </div>
+  </div>
 </section>
