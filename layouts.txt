@@ -1,0 +1,31 @@
+<div class="row">
+  <div class="col-md-8">
+    <section>
+        <h2>Reviews</h2>
+        <div class="card review-card">
+          <div class="card-body">
+            <div class="row">
+              <div class="col-md-2">
+                  <img src="https://image.ibb.co/jw55Ex/def_face.jpg" class="img img-rounded img-fluid"/>
+                  <p class="text-secondary text-center">Some Date</p>
+              </div>
+              <div class="col-md-10">
+                <div>
+                  <a><strong>Filip Jerga</strong></a>
+                  <div class="review-section">
+                    <star-rating [starType]="'svg'"
+                                 [numOfStars]="5"
+                                 [showHalfStars]="true"
+                                 [rating]="5">
+                    </star-rating>
+                  </div>
+                </div>
+                <div class="clearfix"></div>
+                <p>Some Text</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+  </div>
+</div>

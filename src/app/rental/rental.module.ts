@@ -9,6 +9,7 @@ import { FormsModule } from '@angular/forms';
 import { EditableModule } from '../common/components/editable/editable.module';
 import { ImageUploadModule } from '../common/components/image-upload/image-upload.module';
 import { PaymentModule } from '../payment/payment.module';
+import { StarRatingModule } from 'angular-star-rating';
 
 import { RentalListComponent } from './rental-list/rental-list.component';
 import { RentalListItemComponent } from './rental-list-item/rental-list-item.component';
@@ -62,7 +63,8 @@ const routes: Routes = [
     FormsModule,
     EditableModule,
     ImageUploadModule,
-    PaymentModule
+    PaymentModule,
+    StarRatingModule.forChild()
   ],
   providers: [
     RentalService,
