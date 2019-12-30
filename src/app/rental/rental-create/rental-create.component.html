@@ -92,6 +92,16 @@
           </div>
 
           <div class="form-group">
+            <label for="phone">Phone</label>
+            <input [(ngModel)]="newRental.phone"
+                   name="phone"
+                   type="text"
+                   class="form-control"
+                   id="phone"
+                   required>
+          </div>
+
+          <div class="form-group">
             <label for="shared">Shared</label>
             <input type="checkbox"
                    class="form-control"

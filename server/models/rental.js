@@ -10,6 +10,11 @@ const rentalSchema = new Schema({
   bedrooms: Number,
   shared: Boolean,
   description: { type: String, required: true },
+  phone: {
+    type: String,
+    min: [4, 'Too short, min is 4 characters'],
+    max: [32, 'Too long, max is 32 characters']
+  },
   dailyRate: Number,
   createdAt: { type: Date, default: Date.now },
   user: { type: Schema.Types.ObjectId, ref: 'User' },

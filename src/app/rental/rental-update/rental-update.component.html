@@ -67,6 +67,14 @@
             (entityUpdated)="updateRental(rental._id, $event)">
           </bwm-editable-input>
 
+          <bwm-editable-input
+            [(entity)]="rental"
+            [field]="'phone'"
+            [transformView]="transformLocation"
+            [className]="'rental-phone'"
+            (entityUpdated)="updateRental(rental._id, $event)">
+          </bwm-editable-input>
+
           <div class="rental-room-info">
             <span><i class="fa fa-building"></i>
               <bwm-editable-input

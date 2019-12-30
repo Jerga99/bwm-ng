@@ -51,7 +51,7 @@ router.get('/:id', function(req, res) {
 
   Rental.findById(rentalId)
         .populate('user', 'username -_id')
-        .populate('bookings', 'startAt endAt -_id')
+        .populate('bookings', 'startAt endAt rental user -_id')
         .exec(function(err, foundRental) {
 
     if (err || !foundRental) {

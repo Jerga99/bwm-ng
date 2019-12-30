@@ -29,6 +29,9 @@
           <p class="rental-description">
             {{rental.description}}
           </p>
+          <div *ngIf="isRentalAcceptedByUser && rental.phone" class="rental-phone">
+            Phone - {{rental.phone}}
+          </div>
           <div class="rental-rating">
             <span>{{rating}} / 5</span>
           </div>

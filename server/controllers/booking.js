@@ -14,7 +14,7 @@ exports.createBooking = function(req, res) {
   const { startAt, endAt, totalPrice, guests, days, rental, paymentToken } = req.body;
   const user = res.locals.user;
 
-  const booking = new Booking({ startAt, endAt, totalPrice, guests, days});
+  const booking = new Booking({ startAt, endAt, totalPrice, guests, days, user: user.id});
 
   Rental.findById(rental._id)
         .populate('bookings')
