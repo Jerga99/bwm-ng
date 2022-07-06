@@ -45,7 +45,7 @@
     "jsonwebtoken": "^8.2.1",
     "mdbreact": "^4.8.7",
     "medium-draft": "^0.6.0-beta1",
-    "moment": "^2.22.1",
+    "moment": "^2.29.4",
     "mongoose": "^5.0.17",
     "multer": "^1.3.1",
     "multer-s3": "^2.7.0",
